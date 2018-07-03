@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A03518420EBD54A001343E9 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03518320EBD54A001343E9 /* ConnectivityManager.swift */; };
+		5A03518920EBD9DF001343E9 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03518320EBD54A001343E9 /* ConnectivityManager.swift */; };
 		5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8192320EB0327008829CF /* AppDelegate.swift */; };
 		5AA8192620EB0327008829CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8192520EB0327008829CF /* ViewController.swift */; };
 		5AA8192920EB0327008829CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8192720EB0327008829CF /* Main.storyboard */; };
@@ -74,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A03518320EBD54A001343E9 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
 		5AA8192020EB0327008829CF /* CoMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA8192320EB0327008829CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA8192520EB0327008829CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,9 +126,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A03518820EBD5EA001343E9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5A03518320EBD54A001343E9 /* ConnectivityManager.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		5AA8191720EB0327008829CF = {
 			isa = PBXGroup;
 			children = (
+				5A03518820EBD5EA001343E9 /* Shared */,
 				5AA8192220EB0327008829CF /* CoMotion */,
 				5AA8193720EB0328008829CF /* CoMotionTests */,
 				5AA8194120EB0328008829CF /* CoMotion WatchKit App */,
@@ -353,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A03518920EBD9DF001343E9 /* ConnectivityManager.swift in Sources */,
 				5AA8192620EB0327008829CF /* ViewController.swift in Sources */,
 				5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */,
 			);
@@ -371,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA8195620EB0329008829CF /* NotificationController.swift in Sources */,
+				5A03518420EBD54A001343E9 /* ConnectivityManager.swift in Sources */,
 				5AA8195420EB0329008829CF /* ExtensionDelegate.swift in Sources */,
 				5AA8195220EB0329008829CF /* InterfaceController.swift in Sources */,
 				5AA8196C20EB04F4008829CF /* MotionManager.swift in Sources */,

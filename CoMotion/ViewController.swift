@@ -7,19 +7,17 @@
 //
 
 import UIKit
+import WatchConnectivity
+
 
 class ViewController: UIViewController {
+    let connectivityManager = ConnectivityManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        WCSession.default.delegate = connectivityManager
+        WCSession.default.activate()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
-

@@ -7,11 +7,14 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    let connectivityManager = ConnectivityManager()
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        WCSession.default.delegate = connectivityManager
+        WCSession.default.activate()
     }
 
     func applicationDidBecomeActive() {
