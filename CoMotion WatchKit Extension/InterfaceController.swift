@@ -11,6 +11,7 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
+    let motionManager = MotionManager()
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -28,4 +29,12 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func didTapStart() {
+        motionManager.start()
+    }
+    
+    @IBAction func didTapStop() {
+        motionManager.stop()
+    }
+    
 }

@@ -21,6 +21,7 @@
 		5AA8195420EB0329008829CF /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8195320EB0329008829CF /* ExtensionDelegate.swift */; };
 		5AA8195620EB0329008829CF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8195520EB0329008829CF /* NotificationController.swift */; };
 		5AA8195820EB0329008829CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8195720EB0329008829CF /* Assets.xcassets */; };
+		5AA8196C20EB04F4008829CF /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8196B20EB04F4008829CF /* MotionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		5AA8195720EB0329008829CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AA8195920EB0329008829CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AA8195A20EB0329008829CF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5AA8196B20EB04F4008829CF /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				5AA8195120EB0329008829CF /* InterfaceController.swift */,
 				5AA8195320EB0329008829CF /* ExtensionDelegate.swift */,
 				5AA8195520EB0329008829CF /* NotificationController.swift */,
+				5AA8196B20EB04F4008829CF /* MotionManager.swift */,
 				5AA8195720EB0329008829CF /* Assets.xcassets */,
 				5AA8195920EB0329008829CF /* Info.plist */,
 				5AA8195A20EB0329008829CF /* PushNotificationPayload.apns */,
@@ -370,6 +373,7 @@
 				5AA8195620EB0329008829CF /* NotificationController.swift in Sources */,
 				5AA8195420EB0329008829CF /* ExtensionDelegate.swift in Sources */,
 				5AA8195220EB0329008829CF /* InterfaceController.swift in Sources */,
+				5AA8196C20EB04F4008829CF /* MotionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EG77NM7886;
 				INFOPLIST_FILE = "CoMotion WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -561,6 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EG77NM7886;
 				INFOPLIST_FILE = "CoMotion WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -583,6 +589,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EG77NM7886;
 				IBSC_MODULE = CoMotion_WatchKit_Extension;
 				INFOPLIST_FILE = "CoMotion WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = apps.yoon.CoMotion.watchkitapp;
@@ -601,6 +608,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EG77NM7886;
 				IBSC_MODULE = CoMotion_WatchKit_Extension;
 				INFOPLIST_FILE = "CoMotion WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = apps.yoon.CoMotion.watchkitapp;
@@ -618,6 +626,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EG77NM7886;
 				INFOPLIST_FILE = CoMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,6 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EG77NM7886;
 				INFOPLIST_FILE = CoMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
