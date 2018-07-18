@@ -9,7 +9,16 @@
 import Foundation
 import CoreMotion
 
+protocol MotionManagerDelegate: class {
+    
+    func motionManager(_ motionManager: MotionManager, didUpdate deviceMotion: Motion)
+    
+}
+
 class MotionManager {
+
+    weak var delegate: MotionManagerDelegate?
+    
     let motionManager = CMMotionManager()
     let queue: OperationQueue = {
        let queue = OperationQueue()
@@ -25,10 +34,10 @@ class MotionManager {
             return
         }
         
-        motionManager.startDeviceMotionUpdates(to: queue) { (motion, error) in
-            if let motion = motion {
-                print(motion)
-            }
+        motionManager.startDeviceMotionUpdates(to: queue) { [weak self] (deviceMotion, error) in
+            guard let strongSelf = self, let deviceMotion = deviceMotion else { return }
+            print(deviceMotion)
+            strongSelf.delegate?.motionManager(strongSelf, didUpdate: deviceMotion.motionValue)
         }
     }
     
@@ -36,4 +45,9 @@ class MotionManager {
         guard motionManager.isDeviceMotionAvailable else { return }
         motionManager.stopDeviceMotionUpdates()
     }
+    
+    deinit {
+        stop()
+    }
+    
 }

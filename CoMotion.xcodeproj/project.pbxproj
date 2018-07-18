@@ -9,8 +9,18 @@
 /* Begin PBXBuildFile section */
 		5A03518420EBD54A001343E9 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03518320EBD54A001343E9 /* ConnectivityManager.swift */; };
 		5A03518920EBD9DF001343E9 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03518320EBD54A001343E9 /* ConnectivityManager.swift */; };
+		5A13D80920FD798100CCEBD5 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13D80820FD798100CCEBD5 /* ListInteractor.swift */; };
+		5A13D80D20FD7A4D00CCEBD5 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */; };
+		5A13D80F20FE32C200CCEBD5 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8196B20EB04F4008829CF /* MotionManager.swift */; };
+		5A13D81120FE330100CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03518D20EC04DC001343E9 /* CMDeviceMotion+DictionaryValue.swift */; };
+		5A13D81320FE336D00CCEBD5 /* ListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13D81220FE336D00CCEBD5 /* ListInteractorIO.swift */; };
+		5A13D81420FE3E9B00CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03518D20EC04DC001343E9 /* CMDeviceMotion+DictionaryValue.swift */; };
+		5A13D81520FE3E9D00CCEBD5 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */; };
+		5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */; };
+		5A87FDFA20FF98E50011B20F /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF920FF98E50011B20F /* ListPresenter.swift */; };
+		5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDFB20FF99150011B20F /* ListWireframe.swift */; };
+		5A87FDFE20FF99200011B20F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDFD20FF99200011B20F /* ListViewController.swift */; };
 		5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8192320EB0327008829CF /* AppDelegate.swift */; };
-		5AA8192620EB0327008829CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8192520EB0327008829CF /* ViewController.swift */; };
 		5AA8192920EB0327008829CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8192720EB0327008829CF /* Main.storyboard */; };
 		5AA8192B20EB0328008829CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8192A20EB0328008829CF /* Assets.xcassets */; };
 		5AA8192E20EB0328008829CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8192C20EB0328008829CF /* LaunchScreen.storyboard */; };
@@ -77,9 +87,16 @@
 
 /* Begin PBXFileReference section */
 		5A03518320EBD54A001343E9 /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
+		5A03518D20EC04DC001343E9 /* CMDeviceMotion+DictionaryValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMDeviceMotion+DictionaryValue.swift"; sourceTree = "<group>"; };
+		5A13D80820FD798100CCEBD5 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
+		5A13D81220FE336D00CCEBD5 /* ListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorIO.swift; sourceTree = "<group>"; };
+		5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		5A87FDF920FF98E50011B20F /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		5A87FDFB20FF99150011B20F /* ListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
+		5A87FDFD20FF99200011B20F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		5AA8192020EB0327008829CF /* CoMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA8192320EB0327008829CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5AA8192520EB0327008829CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5AA8192820EB0327008829CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AA8192A20EB0328008829CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AA8192D20EB0328008829CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,18 +143,141 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A03518820EBD5EA001343E9 /* Shared */ = {
+		5A13D80320FD759F00CCEBD5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5A13D80A20FD7A3200CCEBD5 /* Common */,
+				5A13D80420FD76AF00CCEBD5 /* Modules */,
+				5AA8192320EB0327008829CF /* AppDelegate.swift */,
+				5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5A13D80420FD76AF00CCEBD5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5A13D80520FD76E400CCEBD5 /* List */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5A13D80520FD76E400CCEBD5 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5A13D80620FD794700CCEBD5 /* Application Logic */,
+				5A87FDF520FF8E6A0011B20F /* User Interface */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		5A13D80620FD794700CCEBD5 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				5A13D80E20FE32AB00CCEBD5 /* Manager */,
+				5A13D80720FD794E00CCEBD5 /* Interactor */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		5A13D80720FD794E00CCEBD5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5A13D80820FD798100CCEBD5 /* ListInteractor.swift */,
+				5A13D81220FE336D00CCEBD5 /* ListInteractorIO.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5A13D80A20FD7A3200CCEBD5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5A13D81020FE32E900CCEBD5 /* Extensions */,
+				5A13D80B20FD7A3900CCEBD5 /* Entity */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5A13D80B20FD7A3900CCEBD5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5A13D80E20FE32AB00CCEBD5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				5A03518320EBD54A001343E9 /* ConnectivityManager.swift */,
+				5AA8196B20EB04F4008829CF /* MotionManager.swift */,
 			);
-			path = Shared;
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5A13D81020FE32E900CCEBD5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A03518D20EC04DC001343E9 /* CMDeviceMotion+DictionaryValue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A87FDF520FF8E6A0011B20F /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5A87FDF620FF8E750011B20F /* Presenter */,
+				5A87FDF720FF98CD0011B20F /* View */,
+				5A87FDF820FF98D20011B20F /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		5A87FDF620FF8E750011B20F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5A87FDF920FF98E50011B20F /* ListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5A87FDF720FF98CD0011B20F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A87FDFD20FF99200011B20F /* ListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A87FDF820FF98D20011B20F /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				5A87FDFB20FF99150011B20F /* ListWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		5A87FDFF20FF99370011B20F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5AA8192720EB0327008829CF /* Main.storyboard */,
+				5AA8192A20EB0328008829CF /* Assets.xcassets */,
+				5AA8192C20EB0328008829CF /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5A87FE0020FF99400011B20F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AA8192F20EB0328008829CF /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5AA8191720EB0327008829CF = {
 			isa = PBXGroup;
 			children = (
-				5A03518820EBD5EA001343E9 /* Shared */,
 				5AA8192220EB0327008829CF /* CoMotion */,
 				5AA8193720EB0328008829CF /* CoMotionTests */,
 				5AA8194120EB0328008829CF /* CoMotion WatchKit App */,
@@ -160,12 +300,9 @@
 		5AA8192220EB0327008829CF /* CoMotion */ = {
 			isa = PBXGroup;
 			children = (
-				5AA8192320EB0327008829CF /* AppDelegate.swift */,
-				5AA8192520EB0327008829CF /* ViewController.swift */,
-				5AA8192720EB0327008829CF /* Main.storyboard */,
-				5AA8192A20EB0328008829CF /* Assets.xcassets */,
-				5AA8192C20EB0328008829CF /* LaunchScreen.storyboard */,
-				5AA8192F20EB0328008829CF /* Info.plist */,
+				5A13D80320FD759F00CCEBD5 /* Classes */,
+				5A87FDFF20FF99370011B20F /* Resources */,
+				5A87FE0020FF99400011B20F /* Supporting Files */,
 			);
 			path = CoMotion;
 			sourceTree = "<group>";
@@ -195,7 +332,6 @@
 				5AA8195120EB0329008829CF /* InterfaceController.swift */,
 				5AA8195320EB0329008829CF /* ExtensionDelegate.swift */,
 				5AA8195520EB0329008829CF /* NotificationController.swift */,
-				5AA8196B20EB04F4008829CF /* MotionManager.swift */,
 				5AA8195720EB0329008829CF /* Assets.xcassets */,
 				5AA8195920EB0329008829CF /* Info.plist */,
 				5AA8195A20EB0329008829CF /* PushNotificationPayload.apns */,
@@ -365,8 +501,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A87FDFA20FF98E50011B20F /* ListPresenter.swift in Sources */,
+				5A13D81320FE336D00CCEBD5 /* ListInteractorIO.swift in Sources */,
+				5A87FDFE20FF99200011B20F /* ListViewController.swift in Sources */,
 				5A03518920EBD9DF001343E9 /* ConnectivityManager.swift in Sources */,
-				5AA8192620EB0327008829CF /* ViewController.swift in Sources */,
+				5A13D80F20FE32C200CCEBD5 /* MotionManager.swift in Sources */,
+				5A13D80920FD798100CCEBD5 /* ListInteractor.swift in Sources */,
+				5A13D80D20FD7A4D00CCEBD5 /* Motion.swift in Sources */,
+				5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */,
+				5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */,
+				5A13D81120FE330100CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */,
 				5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,7 +530,9 @@
 				5AA8195620EB0329008829CF /* NotificationController.swift in Sources */,
 				5A03518420EBD54A001343E9 /* ConnectivityManager.swift in Sources */,
 				5AA8195420EB0329008829CF /* ExtensionDelegate.swift in Sources */,
+				5A13D81420FE3E9B00CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */,
 				5AA8195220EB0329008829CF /* InterfaceController.swift in Sources */,
+				5A13D81520FE3E9D00CCEBD5 /* Motion.swift in Sources */,
 				5AA8196C20EB04F4008829CF /* MotionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

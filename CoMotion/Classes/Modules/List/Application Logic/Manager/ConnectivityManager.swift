@@ -32,5 +32,9 @@ class ConnectivityManager: NSObject, WCSessionDelegate {
     }
     #endif
     
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("\(#function) session: \(session), message: \(message)")
+    }
+    
 }
 
