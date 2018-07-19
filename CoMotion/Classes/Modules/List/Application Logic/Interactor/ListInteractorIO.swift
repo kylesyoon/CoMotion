@@ -9,10 +9,14 @@
 import Foundation
 
 protocol ListInteractorInput: class {
+    
     func startMotionUpdates()
     func stopMotionUpdates()
+    
 }
 
 protocol ListInteractorOutput: class {
-    func update(_ motion: Motion) 
+    
+    func update(_ motion: Motion)
+    
 }

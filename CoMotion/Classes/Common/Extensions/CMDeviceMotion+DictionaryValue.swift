@@ -9,6 +9,7 @@
 import CoreMotion
 
 extension CMDeviceMotion {
+    
     var dictionaryValue: [String: Any] {
         return [
             "timestamp": Double(self.timestamp),
@@ -49,4 +50,5 @@ extension CMDeviceMotion {
                       heading: self.heading,
                       timestamp: self.timestamp)
     }
+    
 }

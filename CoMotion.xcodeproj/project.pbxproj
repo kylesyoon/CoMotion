@@ -16,6 +16,9 @@
 		5A13D81320FE336D00CCEBD5 /* ListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13D81220FE336D00CCEBD5 /* ListInteractorIO.swift */; };
 		5A13D81420FE3E9B00CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A03518D20EC04DC001343E9 /* CMDeviceMotion+DictionaryValue.swift */; };
 		5A13D81520FE3E9D00CCEBD5 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */; };
+		5A5089612100D47800A11DD1 /* ListViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089602100D47800A11DD1 /* ListViewInterface.swift */; };
+		5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */; };
+		5A5089652100DDB000A11DD1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8192F20EB0328008829CF /* Info.plist */; };
 		5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */; };
 		5A87FDFA20FF98E50011B20F /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF920FF98E50011B20F /* ListPresenter.swift */; };
 		5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDFB20FF99150011B20F /* ListWireframe.swift */; };
@@ -92,6 +95,8 @@
 		5A13D80820FD798100CCEBD5 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		5A13D81220FE336D00CCEBD5 /* ListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorIO.swift; sourceTree = "<group>"; };
+		5A5089602100D47800A11DD1 /* ListViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewInterface.swift; sourceTree = "<group>"; };
+		5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleInterface.swift; sourceTree = "<group>"; };
 		5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		5A87FDF920FF98E50011B20F /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		5A87FDFB20FF99150011B20F /* ListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5A13D80620FD794700CCEBD5 /* Application Logic */,
+				5A5089622100D5F100A11DD1 /* Module Interface */,
 				5A87FDF520FF8E6A0011B20F /* User Interface */,
 			);
 			path = List;
@@ -226,6 +232,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5A5089622100D5F100A11DD1 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
 		5A87FDF520FF8E6A0011B20F /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				5A87FDFD20FF99200011B20F /* ListViewController.swift */,
+				5A5089602100D47800A11DD1 /* ListViewInterface.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -475,6 +490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5089652100DDB000A11DD1 /* Info.plist in Resources */,
 				5AA8192E20EB0328008829CF /* LaunchScreen.storyboard in Resources */,
 				5AA8192B20EB0328008829CF /* Assets.xcassets in Resources */,
 				5AA8192920EB0327008829CF /* Main.storyboard in Resources */,
@@ -515,6 +531,7 @@
 				5A87FDFA20FF98E50011B20F /* ListPresenter.swift in Sources */,
 				5A13D81320FE336D00CCEBD5 /* ListInteractorIO.swift in Sources */,
 				5A87FDFE20FF99200011B20F /* ListViewController.swift in Sources */,
+				5A5089612100D47800A11DD1 /* ListViewInterface.swift in Sources */,
 				5A03518920EBD9DF001343E9 /* ConnectivityManager.swift in Sources */,
 				5A13D80F20FE32C200CCEBD5 /* MotionManager.swift in Sources */,
 				5A13D80920FD798100CCEBD5 /* ListInteractor.swift in Sources */,
@@ -524,6 +541,7 @@
 				5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */,
 				5A13D81120FE330100CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */,
 				5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */,
+				5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +817,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EG77NM7886;
-				INFOPLIST_FILE = CoMotion/Info.plist;
+				INFOPLIST_FILE = "CoMotion/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -817,7 +835,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EG77NM7886;
-				INFOPLIST_FILE = CoMotion/Info.plist;
+				INFOPLIST_FILE = "CoMotion/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

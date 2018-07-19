@@ -16,7 +16,7 @@ protocol MotionManagerDelegate: class {
 }
 
 class MotionManager {
-
+    
     weak var delegate: MotionManagerDelegate?
     
     let motionManager = CMMotionManager()

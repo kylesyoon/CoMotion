@@ -8,6 +8,25 @@
 
 import Foundation
 
-class ListPresenter {
+class ListPresenter: ListInteractorOutput, ListModuleInterface {
+    
+    var interactor: ListInteractorInput?
+    var userInterface: ListViewInterface?
+    
+    // MARK: ListInteractorOutput
+    
+    func update(_ motion: Motion) {
+        userInterface?.add(motion: motion)
+    }
+    
+    // MARK: ListModuleInterface
+    
+    func startMotionUpdates() {
+        interactor?.startMotionUpdates()
+    }
+    
+    func stoptMotionUpdates() {
+        interactor?.stopMotionUpdates()
+    }
     
 }

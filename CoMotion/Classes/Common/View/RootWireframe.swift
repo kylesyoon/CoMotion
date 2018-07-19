@@ -9,6 +9,7 @@
 import UIKit
 
 class RootWireframe {
+    
     func showRootViewController(_ viewController: UIViewController, in window: UIWindow) {
         guard let navigationController = rootNavigationController(in: window) else {
             return
@@ -25,4 +26,5 @@ class RootWireframe {
         
         return rootNavigationController
     }
+    
 }

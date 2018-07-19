@@ -8,6 +8,30 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, ListViewInterface {
+    
+    var eventHandler: ListModuleInterface?
+    
+    fileprivate var motionData = [Motion]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let startStopButton = UIBarButtonItem(title: NSLocalizedString("Start", comment: "Start"),
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(didTapStartStopButton(_:)))
+        self.navigationItem.rightBarButtonItem = startStopButton
+    }
+    
+    @objc func didTapStartStopButton(_ button: UIBarButtonItem) {
+        
+    }
+    
+    // MARK: ListViewInterface
+    
+    func add(motion: Motion) {
+        // add motion to table view
+    }
     
 }

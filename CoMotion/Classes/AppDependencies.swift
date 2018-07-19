@@ -6,15 +6,33 @@
 //  Copyright © 2018 Yoon, Kyle. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AppDependencies {
+    
+    var listWireframe: ListWireframe?
+    
     init() {
-        
+        self.configureDependencies()
+    }
+    
+    func setRootViewController(into window: UIWindow) {
+        self.listWireframe?.presentListInterface(from: window)
     }
     
     func configureDependencies() {
+        let rootWireframe = RootWireframe()
         let motionManager = MotionManager()
         let listInteractor = ListInteractor(motionManager: motionManager)
+        let listPresenter = ListPresenter()
+        let listWireframe = ListWireframe()
+        
+        listInteractor.output = listPresenter
+        listPresenter.interactor = listInteractor
+        
+        listWireframe.rootWireframe = rootWireframe
+        listWireframe.listPresenter = listPresenter
+        self.listWireframe = listWireframe
     }
+    
 }
