@@ -25,6 +25,7 @@
 		5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDFB20FF99150011B20F /* ListWireframe.swift */; };
 		5A87FDFE20FF99200011B20F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDFD20FF99200011B20F /* ListViewController.swift */; };
 		5A87FE0320FF9EA40011B20F /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FE0220FF9EA40011B20F /* RootWireframe.swift */; };
+		5A9D0F7D210127CA00A39DDD /* MotionListDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9D0F7C210127CA00A39DDD /* MotionListDisplayData.swift */; };
 		5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8192320EB0327008829CF /* AppDelegate.swift */; };
 		5AA8192920EB0327008829CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8192720EB0327008829CF /* Main.storyboard */; };
 		5AA8192B20EB0328008829CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8192A20EB0328008829CF /* Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		5A87FDFB20FF99150011B20F /* ListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
 		5A87FDFD20FF99200011B20F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		5A87FE0220FF9EA40011B20F /* RootWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
+		5A9D0F7C210127CA00A39DDD /* MotionListDisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionListDisplayData.swift; sourceTree = "<group>"; };
 		5AA8192020EB0327008829CF /* CoMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA8192320EB0327008829CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA8192820EB0327008829CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				5A87FDF920FF98E50011B20F /* ListPresenter.swift */,
+				5A9D0F7C210127CA00A39DDD /* MotionListDisplayData.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				5A13D80F20FE32C200CCEBD5 /* MotionManager.swift in Sources */,
 				5A13D80920FD798100CCEBD5 /* ListInteractor.swift in Sources */,
 				5A13D80D20FD7A4D00CCEBD5 /* Motion.swift in Sources */,
+				5A9D0F7D210127CA00A39DDD /* MotionListDisplayData.swift in Sources */,
 				5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */,
 				5A5089672100DF6700A11DD1 /* String+Localized.swift in Sources */,
 				5A87FE0320FF9EA40011B20F /* RootWireframe.swift in Sources */,

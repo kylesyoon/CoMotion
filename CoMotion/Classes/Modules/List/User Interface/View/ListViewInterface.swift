@@ -10,6 +10,6 @@ import Foundation
 
 protocol ListViewInterface: class {
     
-    func add(motion: Motion)
+    func addMotionToUserInterface(motion: MotionListDisplayData)
     
 }

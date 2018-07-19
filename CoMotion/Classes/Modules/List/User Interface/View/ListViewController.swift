@@ -12,7 +12,9 @@ class ListViewController: UIViewController, ListViewInterface {
     
     var eventHandler: ListModuleInterface?
     
-    fileprivate var motionData = [Motion]()
+    @IBOutlet fileprivate var tableView: UITableView!
+    
+    fileprivate var motionData = [MotionListDisplayData]()
     fileprivate var isUpdating: Bool = false {
         didSet {
             if self.isUpdating {
@@ -41,9 +43,29 @@ class ListViewController: UIViewController, ListViewInterface {
     
     // MARK: ListViewInterface
     
-    func add(motion: Motion) {
-        // add motion to table view
-        print("\(#function): \(motion)")
+    func addMotionToUserInterface(motion: MotionListDisplayData) {
+        self.motionData.append(motion)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+}
+
+extension ListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.motionData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rightDetailCell = tableView.dequeueReusableCell(withIdentifier: "rightDetailCell", for: indexPath)
+        let motionDisplay = self.motionData[indexPath.row]
+        
+        rightDetailCell.textLabel?.text = motionDisplay.title
+        rightDetailCell.detailTextLabel?.text = motionDisplay.timestamp
+        
+        return rightDetailCell
     }
     
 }
