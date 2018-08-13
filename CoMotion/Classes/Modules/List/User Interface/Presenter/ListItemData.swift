@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct MotionListDisplayData {
+struct ListItemData {
+    
     let title: String
-    let timestamp: String
+    let x: String
+    let y: String
+    let z: String
+    
 }

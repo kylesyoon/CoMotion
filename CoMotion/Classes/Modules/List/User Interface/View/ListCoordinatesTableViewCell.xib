@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="132" id="AhF-n2-NCO" customClass="ListCoordinatesTableViewCell" customModule="CoMotion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AhF-n2-NCO" id="Dx8-mM-ciZ">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="131.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMy-OO-1LR">
+                        <rect key="frame" x="16" y="8" width="343" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lji-dL-lTk">
+                        <rect key="frame" x="16" y="36" width="343" height="87.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch -0.00990903011121742" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fza-5e-cFH">
+                                <rect key="frame" x="0.0" y="0.0" width="226.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yaw -0.00990903011121742" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-M6-Mv7">
+                                <rect key="frame" x="0.0" y="33.5" width="218.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll -0.00990903011121742" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6p-oK-L9d">
+                                <rect key="frame" x="0.0" y="67" width="216" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lji-dL-lTk" firstAttribute="leading" secondItem="Dx8-mM-ciZ" secondAttribute="leading" constant="16" id="06n-p5-Yyx"/>
+                    <constraint firstItem="nMy-OO-1LR" firstAttribute="top" secondItem="Dx8-mM-ciZ" secondAttribute="top" constant="8" id="ZYz-XQ-U9p"/>
+                    <constraint firstAttribute="trailing" secondItem="lji-dL-lTk" secondAttribute="trailing" constant="16" id="dQi-Fm-YQz"/>
+                    <constraint firstItem="lji-dL-lTk" firstAttribute="top" secondItem="nMy-OO-1LR" secondAttribute="bottom" constant="8" id="gst-q2-PlH"/>
+                    <constraint firstItem="nMy-OO-1LR" firstAttribute="leading" secondItem="Dx8-mM-ciZ" secondAttribute="leading" constant="16" id="lpQ-CY-U3e"/>
+                    <constraint firstAttribute="bottom" secondItem="lji-dL-lTk" secondAttribute="bottom" constant="8" id="z6U-zw-RSo"/>
+                    <constraint firstAttribute="trailing" secondItem="nMy-OO-1LR" secondAttribute="trailing" constant="16" id="zGC-3p-8sM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coordinatesStackView" destination="lji-dL-lTk" id="0ot-nR-5E1"/>
+                <outlet property="titleLabel" destination="nMy-OO-1LR" id="vd2-yW-MCi"/>
+                <outlet property="xLabel" destination="Fza-5e-cFH" id="bAv-Gs-96u"/>
+                <outlet property="yLabel" destination="UHV-M6-Mv7" id="1rJ-lu-kLC"/>
+                <outlet property="zLabel" destination="I6p-oK-L9d" id="YND-Sl-LBk"/>
+            </connections>
+            <point key="canvasLocation" x="-136.5" y="86"/>
+        </tableViewCell>
+    </objects>
+</document>

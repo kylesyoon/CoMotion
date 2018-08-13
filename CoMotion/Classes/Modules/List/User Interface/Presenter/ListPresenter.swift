@@ -16,16 +16,34 @@ class ListPresenter: ListInteractorOutput, ListModuleInterface {
     // MARK: ListInteractorOutput
     
     func update(_ motion: Motion) {
-        let attitudeString = "Attitude: Roll \(motion.attitude.roll) Pitch \(motion.attitude.pitch) Yaw \(motion.attitude.yaw)"
-        let rotationRateString = "Rotation Rate: X \(motion.rotationRate.x) Y \(motion.rotationRate.y) Yaw \(motion.rotationRate.z)"
-        let gravityString = "Gravity: X \(motion.gravity.x) Y \(motion.gravity.y) Yaw \(motion.gravity.z)"
-        let userAccel = "Gravity: X \(motion.userAcceleration.x) Y \(motion.userAcceleration.y) Yaw \(motion.userAcceleration.z)"
-        let heading = "Heading: \(motion.heading)"
+        let attitudeItemData = ListItemData(title: NSLocalizedString("Attitude", comment: "Attitude"),
+                                            x: motion.attitude.roll.com_string,
+                                            y: motion.attitude.pitch.com_string,
+                                            z: motion.attitude.yaw.com_string)
         
-        let displayStrings = [attitudeString, rotationRateString, gravityString, userAccel, heading]
-        let title = displayStrings.joined(separator: "\n")
+        let rotationItemData = ListItemData(title: NSLocalizedString("Rotation Rate", comment: "Rotation Rate"),
+                                            x: motion.rotationRate.x.com_string,
+                                            y: motion.rotationRate.y.com_string,
+                                            z: motion.rotationRate.z.com_string)
         
-        self.userInterface?.addMotionToUserInterface(motion: MotionListDisplayData(title: title, timestamp: "\(motion.timestamp)"))
+        let gravityItemData = ListItemData(title: NSLocalizedString("Gravity", comment: "Gravity"),
+                                           x: motion.gravity.x.com_string,
+                                           y: motion.gravity.y.com_string,
+                                           z: motion.gravity.z.com_string)
+        
+        let accelerationItemData = ListItemData(title: NSLocalizedString("User Acceleration", comment: "User Acceleration"),
+                                                x: motion.userAcceleration.x.com_string,
+                                                y: motion.userAcceleration.y.com_string,
+                                                z: motion.userAcceleration.z.com_string)
+        
+        // TODO: motion.heading
+        
+        let sectionData = ListSectionData(timestamp: "\(motion.timestamp)", items: [attitudeItemData,
+                                                                                    rotationItemData,
+                                                                                    gravityItemData,
+                                                                                    accelerationItemData])
+        
+        self.userInterface?.addSectionDataToUserInterface(data: sectionData)
     }
     
     // MARK: ListModuleInterface

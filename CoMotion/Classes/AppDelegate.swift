@@ -15,9 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        guard let window = window else { return true }
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        
         let appDependencies = AppDependencies()
         appDependencies.setRootViewController(into: window)
+        window.makeKeyAndVisible()
         
         return true
     }

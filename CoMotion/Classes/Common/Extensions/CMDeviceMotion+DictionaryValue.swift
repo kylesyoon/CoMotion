@@ -10,7 +10,7 @@ import CoreMotion
 
 extension CMDeviceMotion {
     
-    var dictionaryValue: [String: Any] {
+    var com_dictionaryValue: [String: Any] {
         return [
             "timestamp": Double(self.timestamp),
             "attitude": ["roll": self.attitude.roll,
@@ -30,7 +30,7 @@ extension CMDeviceMotion {
         ]
     }
     
-    var motionValue: Motion {
+    var com_motionValue: Motion {
         let attitude = Attitude(roll: self.attitude.roll,
                                 pitch: self.attitude.pitch,
                                 yaw: self.attitude.yaw)

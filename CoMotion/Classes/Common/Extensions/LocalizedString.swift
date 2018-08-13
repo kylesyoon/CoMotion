@@ -9,11 +9,13 @@
 import Foundation
 
 extension String {
-    static var start = {
+    
+    static var com_start = {
         return NSLocalizedString("Start", comment: "Start")
     }()
     
-    static var stop = {
+    static var com_stop = {
         return NSLocalizedString("Stop", comment: "Stop")
     }()
+    
 }

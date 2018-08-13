@@ -37,7 +37,7 @@ class MotionManager {
         motionManager.startDeviceMotionUpdates(to: queue) { [weak self] (deviceMotion, error) in
             guard let strongSelf = self, let deviceMotion = deviceMotion else { return }
             print(deviceMotion)
-            strongSelf.delegate?.motionManager(strongSelf, didUpdate: deviceMotion.motionValue)
+            strongSelf.delegate?.motionManager(strongSelf, didUpdate: deviceMotion.com_motionValue)
         }
     }
     
