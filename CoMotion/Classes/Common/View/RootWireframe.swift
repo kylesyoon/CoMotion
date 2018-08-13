@@ -10,9 +10,21 @@ import UIKit
 
 class RootWireframe {
     
-    func showRootViewController(_ viewController: UIViewController, in window: UIWindow) {
-        let rootNavigationController = UINavigationController(rootViewController: viewController)
-        window.rootViewController = rootNavigationController
+    var tabBarController: UITabBarController?
+    
+    func showRootViewController(_ navigationController: UINavigationController, in window: UIWindow) {
+        let tabBarController = UITabBarController()
+        
+        guard let rootViewController = navigationController.viewControllers.first as? UITabBarControllerDelegate else {
+            assertionFailure("Navigation controller is missing a root view controller that conforms to UITabBarControllerDelegate.")
+            return
+        }
+        
+        tabBarController.delegate = rootViewController
+        tabBarController.setViewControllers([navigationController], animated: true)
+        self.tabBarController = tabBarController
+        
+        window.rootViewController = tabBarController
     }
     
 }

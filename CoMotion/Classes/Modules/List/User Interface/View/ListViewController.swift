@@ -32,6 +32,7 @@ class ListViewController: UIViewController, ListViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = String.com_list
         let startStopButton = UIBarButtonItem(title: String.com_start,
                                               style: .plain,
                                               target: self,
@@ -53,6 +54,8 @@ class ListViewController: UIViewController, ListViewInterface {
     }
     
 }
+
+extension ListViewController: UITabBarControllerDelegate {}
 
 extension ListViewController: UITableViewDataSource {
     

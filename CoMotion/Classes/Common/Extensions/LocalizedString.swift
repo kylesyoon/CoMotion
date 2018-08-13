@@ -10,6 +10,10 @@ import Foundation
 
 extension String {
     
+    static var com_list = {
+        return NSLocalizedString("List", comment: "List")
+    }()
+    
     static var com_start = {
         return NSLocalizedString("Start", comment: "Start")
     }()

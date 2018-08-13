@@ -30,15 +30,22 @@ class ListWireframe {
     }
     
     func presentListInterface(from window: UIWindow) {
-        guard let rootWireframe = rootWireframe, let listViewController = listViewControllerFromStoryboard else {
-            return
+        guard
+            let rootWireframe = rootWireframe,
+            let listViewController = listViewControllerFromStoryboard else {
+                return
         }
         
         listViewController.eventHandler = self.listPresenter
         self.listPresenter?.userInterface = listViewController
         self.listViewController = listViewController
         
-        rootWireframe.showRootViewController(listViewController, in: window)
+        let navigationController = UINavigationController(rootViewController: listViewController)
+        navigationController.tabBarItem = UITabBarItem(title: String.com_list,
+                                                       image: nil,
+                                                       selectedImage: nil)
+        
+        rootWireframe.showRootViewController(navigationController, in: window)
     }
     
 }
