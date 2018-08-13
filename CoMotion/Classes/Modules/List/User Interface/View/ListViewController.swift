@@ -12,7 +12,7 @@ class ListViewController: UIViewController, ListViewInterface {
     
     var eventHandler: ListModuleInterface?
     
-    @IBOutlet fileprivate var tableView: UITableView!
+    @IBOutlet private(set) var tableView: UITableView!
     
     fileprivate var sectionData = [ListSectionData]()
     fileprivate var isUpdating: Bool = false {
