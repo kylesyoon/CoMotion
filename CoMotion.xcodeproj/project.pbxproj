@@ -18,7 +18,7 @@
 		5A13D81520FE3E9D00CCEBD5 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */; };
 		5A5089612100D47800A11DD1 /* ListViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089602100D47800A11DD1 /* ListViewInterface.swift */; };
 		5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */; };
-		5A5089672100DF6700A11DD1 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089662100DF6700A11DD1 /* LocalizedString.swift */; };
+		5A5089672100DF6700A11DD1 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089662100DF6700A11DD1 /* String+Localized.swift */; };
 		5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */; };
 		5A87FDFA20FF98E50011B20F /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF920FF98E50011B20F /* ListPresenter.swift */; };
 		5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDFB20FF99150011B20F /* ListWireframe.swift */; };
@@ -103,7 +103,7 @@
 		5A13D81220FE336D00CCEBD5 /* ListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorIO.swift; sourceTree = "<group>"; };
 		5A5089602100D47800A11DD1 /* ListViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewInterface.swift; sourceTree = "<group>"; };
 		5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleInterface.swift; sourceTree = "<group>"; };
-		5A5089662100DF6700A11DD1 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		5A5089662100DF6700A11DD1 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		5A87FDF920FF98E50011B20F /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		5A87FDFB20FF99150011B20F /* ListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				5A03518D20EC04DC001343E9 /* CMDeviceMotion+DictionaryValue.swift */,
-				5A5089662100DF6700A11DD1 /* LocalizedString.swift */,
+				5A5089662100DF6700A11DD1 /* String+Localized.swift */,
 				5A9D0F8821022AC500A39DDD /* Bundle+LoadNib.swift */,
 				5ACBF5B221024A9500D27B26 /* Double+Formatting.swift */,
 			);
@@ -562,7 +562,7 @@
 				5A13D80D20FD7A4D00CCEBD5 /* Motion.swift in Sources */,
 				5A9D0F7D210127CA00A39DDD /* ListItemData.swift in Sources */,
 				5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */,
-				5A5089672100DF6700A11DD1 /* LocalizedString.swift in Sources */,
+				5A5089672100DF6700A11DD1 /* String+Localized.swift in Sources */,
 				5A87FE0320FF9EA40011B20F /* RootWireframe.swift in Sources */,
 				5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */,
 				5A13D81120FE330100CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */,

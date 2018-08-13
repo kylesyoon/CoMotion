@@ -24,7 +24,7 @@ class RootWireframe {
         tabBarController.setViewControllers([navigationController], animated: true)
         self.tabBarController = tabBarController
         
-        window.rootViewController = tabBarController
+        window.rootViewController = self.tabBarController
     }
     
 }
