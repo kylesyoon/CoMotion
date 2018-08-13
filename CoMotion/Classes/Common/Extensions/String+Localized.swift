@@ -22,4 +22,19 @@ extension String {
         return NSLocalizedString("Stop", comment: "Stop")
     }()
     
+    static var com_attitude = {
+        return NSLocalizedString("Attitude", comment: "Attitude")
+    }()
+    
+    static var com_rotationRate = {
+        return NSLocalizedString("Rotation Rate", comment: "Rotation Rate")
+    }()
+    
+    static var com_gravity = {
+       return NSLocalizedString("Gravity", comment: "Gravity")
+    }()
+    
+    static var com_userAcceleration = {
+       return NSLocalizedString("User Acceleration", comment: "User Acceleration")
+    }()
 }

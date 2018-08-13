@@ -11,6 +11,6 @@ import Foundation
 protocol ListModuleInterface: class {
     
     func startMotionUpdates()
-    func stoptMotionUpdates()
+    func stopMotionUpdates()
     
 }

@@ -22,7 +22,7 @@ class ListViewController: UIViewController, ListViewInterface {
                 self.eventHandler?.startMotionUpdates()
             } else {
                 self.navigationItem.rightBarButtonItem?.title = String.com_start
-                self.eventHandler?.stoptMotionUpdates()
+                self.eventHandler?.stopMotionUpdates()
             }
             
             self.tableView.reloadData()

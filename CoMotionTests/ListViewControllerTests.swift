@@ -85,7 +85,7 @@ class MockListViewControllerEventHandler: ListModuleInterface {
         didStartMotionUpdatesCallCount += 1
     }
     
-    func stoptMotionUpdates() {
+    func stopMotionUpdates() {
         didStopMotionUpdatesCallCount += 1
     }
 

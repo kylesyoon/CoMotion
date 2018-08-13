@@ -16,22 +16,22 @@ class ListPresenter: ListInteractorOutput, ListModuleInterface {
     // MARK: ListInteractorOutput
     
     func update(_ motion: Motion) {
-        let attitudeItemData = ListItemData(title: NSLocalizedString("Attitude", comment: "Attitude"),
+        let attitudeItemData = ListItemData(title: .com_attitude,
                                             x: motion.attitude.roll.com_string,
                                             y: motion.attitude.pitch.com_string,
                                             z: motion.attitude.yaw.com_string)
         
-        let rotationItemData = ListItemData(title: NSLocalizedString("Rotation Rate", comment: "Rotation Rate"),
+        let rotationItemData = ListItemData(title: .com_rotationRate,
                                             x: motion.rotationRate.x.com_string,
                                             y: motion.rotationRate.y.com_string,
                                             z: motion.rotationRate.z.com_string)
         
-        let gravityItemData = ListItemData(title: NSLocalizedString("Gravity", comment: "Gravity"),
+        let gravityItemData = ListItemData(title: .com_gravity,
                                            x: motion.gravity.x.com_string,
                                            y: motion.gravity.y.com_string,
                                            z: motion.gravity.z.com_string)
         
-        let accelerationItemData = ListItemData(title: NSLocalizedString("User Acceleration", comment: "User Acceleration"),
+        let accelerationItemData = ListItemData(title: .com_userAcceleration,
                                                 x: motion.userAcceleration.x.com_string,
                                                 y: motion.userAcceleration.y.com_string,
                                                 z: motion.userAcceleration.z.com_string)
@@ -52,7 +52,7 @@ class ListPresenter: ListInteractorOutput, ListModuleInterface {
         interactor?.startMotionUpdates()
     }
     
-    func stoptMotionUpdates() {
+    func stopMotionUpdates() {
         interactor?.stopMotionUpdates()
     }
     
