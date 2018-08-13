@@ -19,6 +19,7 @@
 		5A5089612100D47800A11DD1 /* ListViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089602100D47800A11DD1 /* ListViewInterface.swift */; };
 		5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */; };
 		5A5089672100DF6700A11DD1 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089662100DF6700A11DD1 /* String+Localized.swift */; };
+		5A85042F2122043B0066C648 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85042E2122043B0066C648 /* Charts.framework */; };
 		5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */; };
 		5A87FDFA20FF98E50011B20F /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF920FF98E50011B20F /* ListPresenter.swift */; };
 		5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDFB20FF99150011B20F /* ListWireframe.swift */; };
@@ -104,6 +105,7 @@
 		5A5089602100D47800A11DD1 /* ListViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewInterface.swift; sourceTree = "<group>"; };
 		5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleInterface.swift; sourceTree = "<group>"; };
 		5A5089662100DF6700A11DD1 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		5A85042E2122043B0066C648 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		5A87FDF920FF98E50011B20F /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		5A87FDFB20FF99150011B20F /* ListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A85042F2122043B0066C648 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +259,14 @@
 			path = "Module Interface";
 			sourceTree = "<group>";
 		};
+		5A85042D2122043A0066C648 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A85042E2122043B0066C648 /* Charts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5A87FDF520FF8E6A0011B20F /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +340,7 @@
 				5AA8194120EB0328008829CF /* CoMotion WatchKit App */,
 				5AA8195020EB0329008829CF /* CoMotion WatchKit Extension */,
 				5AA8192120EB0327008829CF /* Products */,
+				5A85042D2122043A0066C648 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,6 +408,8 @@
 				5AA8191D20EB0327008829CF /* Frameworks */,
 				5AA8191E20EB0327008829CF /* Resources */,
 				5AA8196420EB0329008829CF /* Embed Watch Content */,
+				5A850430212204CC0066C648 /* Carthage Script */,
+				5A8504312122061E0066C648 /* Carthage Warning Script */,
 			);
 			buildRules = (
 			);
@@ -542,6 +556,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A850430212204CC0066C648 /* Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+			);
+			name = "Carthage Script";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		5A8504312122061E0066C648 /* Carthage Warning Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Warning Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5AA8191C20EB0327008829CF /* Sources */ = {
@@ -843,6 +890,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EG77NM7886;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "CoMotion/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -861,6 +912,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EG77NM7886;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "CoMotion/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
