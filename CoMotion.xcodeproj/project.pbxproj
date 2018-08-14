@@ -20,6 +20,11 @@
 		5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */; };
 		5A5089672100DF6700A11DD1 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089662100DF6700A11DD1 /* String+Localized.swift */; };
 		5A78F775212327CF00AEE809 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78F774212327CF00AEE809 /* ListInteractorTests.swift */; };
+		5A78F77C21232EE700AEE809 /* ChartWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78F77B21232EE700AEE809 /* ChartWireframe.swift */; };
+		5A78F77F2123315600AEE809 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78F77E2123315600AEE809 /* ChartViewController.swift */; };
+		5A78F7842123681800AEE809 /* ChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78F7832123681800AEE809 /* ChartPresenter.swift */; };
+		5A78F7862123683F00AEE809 /* ChartModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78F7852123683F00AEE809 /* ChartModuleInterface.swift */; };
+		5A78F78821236C1A00AEE809 /* ChartViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78F78721236C1A00AEE809 /* ChartViewInterface.swift */; };
 		5A8164C5212224DA00931B21 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8164C4212224DA00931B21 /* ListPresenterTests.swift */; };
 		5A85042F2122043B0066C648 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85042E2122043B0066C648 /* Charts.framework */; };
 		5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */; };
@@ -108,6 +113,11 @@
 		5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleInterface.swift; sourceTree = "<group>"; };
 		5A5089662100DF6700A11DD1 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		5A78F774212327CF00AEE809 /* ListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
+		5A78F77B21232EE700AEE809 /* ChartWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartWireframe.swift; sourceTree = "<group>"; };
+		5A78F77E2123315600AEE809 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		5A78F7832123681800AEE809 /* ChartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresenter.swift; sourceTree = "<group>"; };
+		5A78F7852123683F00AEE809 /* ChartModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModuleInterface.swift; sourceTree = "<group>"; };
+		5A78F78721236C1A00AEE809 /* ChartViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewInterface.swift; sourceTree = "<group>"; };
 		5A8164C4212224DA00931B21 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
 		5A85042E2122043B0066C648 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
@@ -184,6 +194,7 @@
 		5A13D80420FD76AF00CCEBD5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5A78F77621232E6A00AEE809 /* Chart */,
 				5A13D80520FD76E400CCEBD5 /* List */,
 			);
 			path = Modules;
@@ -261,6 +272,66 @@
 				5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */,
 			);
 			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		5A78F77621232E6A00AEE809 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				5A78F77721232E7500AEE809 /* Application Logic */,
+				5A78F77921232E8C00AEE809 /* Module Interface */,
+				5A78F77821232E7C00AEE809 /* User Interface */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		5A78F77721232E7500AEE809 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		5A78F77821232E7C00AEE809 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5A78F7822123680C00AEE809 /* Presenter */,
+				5A78F77D2123313E00AEE809 /* View */,
+				5A78F77A21232ED700AEE809 /* Wireframe */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		5A78F77921232E8C00AEE809 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5A78F7852123683F00AEE809 /* ChartModuleInterface.swift */,
+			);
+			path = "Module Interface";
+			sourceTree = "<group>";
+		};
+		5A78F77A21232ED700AEE809 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				5A78F77B21232EE700AEE809 /* ChartWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		5A78F77D2123313E00AEE809 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A78F78721236C1A00AEE809 /* ChartViewInterface.swift */,
+				5A78F77E2123315600AEE809 /* ChartViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A78F7822123680C00AEE809 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5A78F7832123681800AEE809 /* ChartPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		5A85042D2122043A0066C648 /* Frameworks */ = {
@@ -607,20 +678,25 @@
 				5ACBF5B321024A9500D27B26 /* Double+Formatting.swift in Sources */,
 				5A87FDFE20FF99200011B20F /* ListViewController.swift in Sources */,
 				5A5089612100D47800A11DD1 /* ListViewInterface.swift in Sources */,
+				5A78F78821236C1A00AEE809 /* ChartViewInterface.swift in Sources */,
 				5A03518920EBD9DF001343E9 /* ConnectivityManager.swift in Sources */,
 				5ACBF5B12102472600D27B26 /* ListSectionData.swift in Sources */,
 				5A13D80F20FE32C200CCEBD5 /* MotionManager.swift in Sources */,
 				5A13D80920FD798100CCEBD5 /* ListInteractor.swift in Sources */,
+				5A78F7842123681800AEE809 /* ChartPresenter.swift in Sources */,
 				5A9D0F83210227D100A39DDD /* ListCoordinatesTableViewCell.swift in Sources */,
 				5A13D80D20FD7A4D00CCEBD5 /* Motion.swift in Sources */,
 				5A9D0F7D210127CA00A39DDD /* ListItemData.swift in Sources */,
+				5A78F7862123683F00AEE809 /* ChartModuleInterface.swift in Sources */,
 				5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */,
 				5A5089672100DF6700A11DD1 /* String+Localized.swift in Sources */,
 				5A87FE0320FF9EA40011B20F /* RootWireframe.swift in Sources */,
 				5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */,
 				5A13D81120FE330100CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */,
+				5A78F77C21232EE700AEE809 /* ChartWireframe.swift in Sources */,
 				5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */,
 				5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */,
+				5A78F77F2123315600AEE809 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

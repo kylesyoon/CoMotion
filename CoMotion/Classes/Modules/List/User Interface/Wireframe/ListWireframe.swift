@@ -11,6 +11,7 @@ import UIKit
 class ListWireframe {
     
     var rootWireframe: RootWireframe?
+    var chartWireframe: ChartWireframe?
 
     var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: nil)
@@ -32,7 +33,9 @@ class ListWireframe {
     func presentListInterface(from window: UIWindow) {
         guard
             let rootWireframe = rootWireframe,
-            let listViewController = listViewControllerFromStoryboard else {
+            let listViewController = listViewControllerFromStoryboard,
+            let chartWireframe = chartWireframe,
+            let chartNavigationController = chartWireframe.setupInitialEmbeddedChartViewController() else {
                 return
         }
         
@@ -40,12 +43,20 @@ class ListWireframe {
         self.listPresenter?.userInterface = listViewController
         self.listViewController = listViewController
         
-        let navigationController = UINavigationController(rootViewController: listViewController)
-        navigationController.tabBarItem = UITabBarItem(title: String.com_list,
-                                                       image: nil,
-                                                       selectedImage: nil)
+        var tabs = [UINavigationController]()
         
-        rootWireframe.showRootViewController(navigationController, in: window)
+        let listNavigationController = UINavigationController(rootViewController: listViewController)
+        listNavigationController.tabBarItem = UITabBarItem(title: String.com_list,
+                                                           image: nil,
+                                                           selectedImage: nil)
+        tabs.append(listNavigationController)
+        tabs.append(chartNavigationController)
+
+        rootWireframe.showViewControllers(tabs, in: window)
+    }
+    
+    func presentChartInterface() {
+        
     }
     
 }

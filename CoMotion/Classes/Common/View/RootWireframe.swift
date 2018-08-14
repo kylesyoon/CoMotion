@@ -12,16 +12,16 @@ class RootWireframe {
     
     var tabBarController: UITabBarController?
     
-    func showRootViewController(_ navigationController: UINavigationController, in window: UIWindow) {
+    func showViewControllers(_ viewControllers: [UIViewController], in window: UIWindow) {
         let tabBarController = UITabBarController()
         
-        guard let rootViewController = navigationController.viewControllers.first as? UITabBarControllerDelegate else {
-            assertionFailure("Navigation controller is missing a root view controller that conforms to UITabBarControllerDelegate.")
-            return
-        }
+//        guard let rootViewController = navigationControllers.first as? UITabBarControllerDelegate else {
+//            assertionFailure("Navigation controller is missing a root view controller that conforms to UITabBarControllerDelegate.")
+//            return
+//        }
         
-        tabBarController.delegate = rootViewController
-        tabBarController.setViewControllers([navigationController], animated: true)
+//        tabBarController.delegate = rootViewController
+        tabBarController.setViewControllers(viewControllers, animated: true)
         self.tabBarController = tabBarController
         
         window.rootViewController = self.tabBarController

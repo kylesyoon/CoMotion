@@ -14,6 +14,10 @@ extension String {
         return NSLocalizedString("List", comment: "List")
     }()
     
+    static var com_chart = {
+        return NSLocalizedString("Chart", comment: "Chart")
+    }()
+    
     static var com_start = {
         return NSLocalizedString("Start", comment: "Start")
     }()

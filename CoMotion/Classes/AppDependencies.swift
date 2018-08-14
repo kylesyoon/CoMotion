@@ -23,14 +23,21 @@ class AppDependencies {
     func configureDependencies() {
         let rootWireframe = RootWireframe()
         let motionManager = MotionManager()
+        
         let listInteractor = ListInteractor(motionManager: motionManager)
         let listPresenter = ListPresenter()
         let listWireframe = ListWireframe()
         
+        let chartPresenter = ChartPresenter()
+        let chartWireframe = ChartWireframe()
+        
+        chartWireframe.rootWireframe = rootWireframe
+        chartWireframe.chartPresenter = chartPresenter
+        
         listInteractor.output = listPresenter
         listPresenter.interactor = listInteractor
-        
         listWireframe.rootWireframe = rootWireframe
+        listWireframe.chartWireframe = chartWireframe
         listWireframe.listPresenter = listPresenter
         self.listWireframe = listWireframe
     }

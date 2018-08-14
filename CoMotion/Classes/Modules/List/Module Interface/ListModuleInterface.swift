@@ -12,5 +12,6 @@ protocol ListModuleInterface: class {
     
     func startMotionUpdates()
     func stopMotionUpdates()
+    func presentChart()
     
 }

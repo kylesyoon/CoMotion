@@ -55,7 +55,15 @@ class ListViewController: UIViewController, ListViewInterface {
     
 }
 
-extension ListViewController: UITabBarControllerDelegate {}
+extension ListViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if viewController != self, let eventHandler = eventHandler {
+            eventHandler.presentChart()
+        }
+    }
+    
+}
 
 extension ListViewController: UITableViewDataSource {
     
