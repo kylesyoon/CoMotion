@@ -19,6 +19,7 @@
 		5A5089612100D47800A11DD1 /* ListViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089602100D47800A11DD1 /* ListViewInterface.swift */; };
 		5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */; };
 		5A5089672100DF6700A11DD1 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5089662100DF6700A11DD1 /* String+Localized.swift */; };
+		5A78F775212327CF00AEE809 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78F774212327CF00AEE809 /* ListInteractorTests.swift */; };
 		5A8164C5212224DA00931B21 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8164C4212224DA00931B21 /* ListPresenterTests.swift */; };
 		5A85042F2122043B0066C648 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85042E2122043B0066C648 /* Charts.framework */; };
 		5A87FDF420FF8CFF0011B20F /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */; };
@@ -106,6 +107,7 @@
 		5A5089602100D47800A11DD1 /* ListViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewInterface.swift; sourceTree = "<group>"; };
 		5A5089632100D5FE00A11DD1 /* ListModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleInterface.swift; sourceTree = "<group>"; };
 		5A5089662100DF6700A11DD1 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		5A78F774212327CF00AEE809 /* ListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
 		5A8164C4212224DA00931B21 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
 		5A85042E2122043B0066C648 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		5A87FDF320FF8CFE0011B20F /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			children = (
 				5AA8193820EB0328008829CF /* ListViewControllerTests.swift */,
 				5A8164C4212224DA00931B21 /* ListPresenterTests.swift */,
+				5A78F774212327CF00AEE809 /* ListInteractorTests.swift */,
 				5AA8193A20EB0328008829CF /* Info.plist */,
 			);
 			path = CoMotionTests;
@@ -626,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8164C5212224DA00931B21 /* ListPresenterTests.swift in Sources */,
+				5A78F775212327CF00AEE809 /* ListInteractorTests.swift in Sources */,
 				5AA8193920EB0328008829CF /* ListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
