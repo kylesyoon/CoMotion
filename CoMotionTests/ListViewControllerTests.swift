@@ -81,6 +81,10 @@ class MockListViewControllerEventHandler: ListModuleInterface {
     var didStartMotionUpdatesCallCount = 0
     var didStopMotionUpdatesCallCount = 0
     
+    func presentChart() {
+        
+    }
+    
     func startMotionUpdates() {
         didStartMotionUpdatesCallCount += 1
     }
