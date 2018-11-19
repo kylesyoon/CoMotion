@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import Charts
 
 protocol ChartModuleInterface: class {
     
-    func startPlottingMotion()
-    func stopPlottingMotion()
+    func startRecordingMotion()
+    func stopRecordingMotion()
+    
+    /// Asks the delegate to give the recorded motion
+    ///
+    /// - Returns: the recorded motion data
+    func fetchLineChartData() -> LineChartData?
     
 }

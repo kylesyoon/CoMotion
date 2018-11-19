@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import Charts
 
 class ChartViewController: UIViewController, ChartViewInterface {
     
     var eventHandler: ChartModuleInterface?
+    
+    var chartData: LineChartData?
+    
+    @IBOutlet var lineChartView: LineChartView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        chartData = eventHandler?.fetchLineChartData()
+        lineChartView.data = chartData
+    }
     
 }

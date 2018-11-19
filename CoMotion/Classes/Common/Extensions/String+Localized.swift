@@ -10,6 +10,8 @@ import Foundation
 
 extension String {
     
+    // MARK: Common
+    
     static var com_list = {
         return NSLocalizedString("List", comment: "List")
     }()
@@ -41,4 +43,5 @@ extension String {
     static var com_userAcceleration = {
        return NSLocalizedString("User Acceleration", comment: "User Acceleration")
     }()
+    
 }

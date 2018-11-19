@@ -62,8 +62,4 @@ class ListPresenter: ListInteractorOutput, ListModuleInterface {
         interactor?.stopRecordingMotion()
     }
     
-    func presentChart() {
-        
-    }
-    
 }

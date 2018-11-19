@@ -62,9 +62,24 @@
                     <view key="view" contentMode="scaleToFill" id="FxZ-aW-efm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qfi-GL-oAT" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qfi-GL-oAT" firstAttribute="leading" secondItem="FxZ-aW-efm" secondAttribute="leading" id="4YB-35-pj2"/>
+                            <constraint firstItem="Qfi-GL-oAT" firstAttribute="top" secondItem="b85-s6-sBR" secondAttribute="top" id="QU9-NL-Jxq"/>
+                            <constraint firstItem="b85-s6-sBR" firstAttribute="trailing" secondItem="Qfi-GL-oAT" secondAttribute="trailing" id="k9M-vD-fWf"/>
+                            <constraint firstItem="b85-s6-sBR" firstAttribute="bottom" secondItem="Qfi-GL-oAT" secondAttribute="bottom" id="u1a-ju-Pcv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b85-s6-sBR"/>
                     </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="Qfi-GL-oAT" id="aUn-dr-Nl4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DV8-KR-dFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

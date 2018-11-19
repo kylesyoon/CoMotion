@@ -52,6 +52,8 @@
 		5AA8196C20EB04F4008829CF /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA8196B20EB04F4008829CF /* MotionManager.swift */; };
 		5ACBF5B12102472600D27B26 /* ListSectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBF5B02102472600D27B26 /* ListSectionData.swift */; };
 		5ACBF5B321024A9500D27B26 /* Double+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBF5B221024A9500D27B26 /* Double+Formatting.swift */; };
+		C8BCF85B21A343CD0037A13F /* ChartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCF85A21A343CD0037A13F /* ChartInteractor.swift */; };
+		C8BCF85D21A3441D0037A13F /* ChartInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCF85C21A3441D0037A13F /* ChartInteractorIO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,8 @@
 		5AA8196B20EB04F4008829CF /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		5ACBF5B02102472600D27B26 /* ListSectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionData.swift; sourceTree = "<group>"; };
 		5ACBF5B221024A9500D27B26 /* Double+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatting.swift"; sourceTree = "<group>"; };
+		C8BCF85A21A343CD0037A13F /* ChartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInteractor.swift; sourceTree = "<group>"; };
+		C8BCF85C21A3441D0037A13F /* ChartInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInteractorIO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +282,7 @@
 		5A78F77721232E7500AEE809 /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
+				C8BCF85921A343B10037A13F /* Interactor */,
 			);
 			path = "Application Logic";
 			sourceTree = "<group>";
@@ -482,6 +487,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		C8BCF85921A343B10037A13F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C8BCF85A21A343CD0037A13F /* ChartInteractor.swift */,
+				C8BCF85C21A3441D0037A13F /* ChartInteractorIO.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -684,6 +698,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A9D0F8921022AC500A39DDD /* Bundle+LoadNib.swift in Sources */,
+				C8BCF85B21A343CD0037A13F /* ChartInteractor.swift in Sources */,
 				5A87FDFA20FF98E50011B20F /* ListPresenter.swift in Sources */,
 				5A13D81320FE336D00CCEBD5 /* ListInteractorIO.swift in Sources */,
 				5ACBF5B321024A9500D27B26 /* Double+Formatting.swift in Sources */,
@@ -705,6 +720,7 @@
 				5A87FDFC20FF99150011B20F /* ListWireframe.swift in Sources */,
 				5A13D81120FE330100CCEBD5 /* CMDeviceMotion+DictionaryValue.swift in Sources */,
 				5A78F77C21232EE700AEE809 /* ChartWireframe.swift in Sources */,
+				C8BCF85D21A3441D0037A13F /* ChartInteractorIO.swift in Sources */,
 				5AA8192420EB0327008829CF /* AppDelegate.swift in Sources */,
 				5A5089642100D5FE00A11DD1 /* ListModuleInterface.swift in Sources */,
 				5A78F77F2123315600AEE809 /* ChartViewController.swift in Sources */,

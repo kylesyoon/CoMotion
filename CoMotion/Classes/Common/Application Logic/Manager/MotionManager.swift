@@ -74,10 +74,11 @@ class MotionManager {
     }
     
     private func startMock() {
-        let now = Date()
+        var index = 0
         mockTimer = Timer.scheduledTimer(withTimeInterval: motionManager.deviceMotionUpdateInterval,
                                          repeats: true) { timer in
-                                            let timeInterval = timer.fireDate.timeIntervalSince(now)
+                                            let timeInterval = Double(index) * Double(timer.timeInterval)
+                                            index += 1
                                             let sinSignal = sin(timeInterval)
                                             let attitude = Attitude(roll: sinSignal,
                                                                     pitch: sinSignal,
