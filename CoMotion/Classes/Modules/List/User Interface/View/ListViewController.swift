@@ -12,20 +12,23 @@ class ListViewController: UIViewController, ListViewInterface {
     
     var eventHandler: ListModuleInterface?
     
-    @IBOutlet private(set) var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     
     fileprivate var sectionData = [ListSectionData]()
     fileprivate var isUpdating: Bool = false {
         didSet {
             if self.isUpdating {
                 self.navigationItem.rightBarButtonItem?.title = String.com_stop
+                self.activityIndicator.startAnimating()
                 self.eventHandler?.startMotionUpdates()
             } else {
                 self.navigationItem.rightBarButtonItem?.title = String.com_start
                 self.eventHandler?.stopMotionUpdates()
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             }
-            
-            self.tableView.reloadData()
         }
     }
     
@@ -51,16 +54,6 @@ class ListViewController: UIViewController, ListViewInterface {
     
     func addSectionDataToUserInterface(data: ListSectionData) {
         self.sectionData.append(data)
-    }
-    
-}
-
-extension ListViewController: UITabBarControllerDelegate {
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if viewController != self, let eventHandler = eventHandler {
-            eventHandler.presentChart()
-        }
     }
     
 }

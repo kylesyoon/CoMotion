@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,17 +31,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cak-qH-Epm"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kCa-oh-sBB">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Po7-Je-Ps3" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="3ct-Tf-1N5"/>
+                            <constraint firstItem="kCa-oh-sBB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FFZ-b0-PNH"/>
                             <constraint firstItem="Po7-Je-Ps3" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" id="cbm-st-5WP"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="Po7-Je-Ps3" secondAttribute="trailing" id="e77-tp-Ti7"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="Po7-Je-Ps3" secondAttribute="bottom" id="jxe-tX-OkM"/>
+                            <constraint firstItem="kCa-oh-sBB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ldi-Eh-Wk5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="kCa-oh-sBB" id="vs6-yH-rRu"/>
                         <outlet property="tableView" destination="Po7-Je-Ps3" id="Sm9-FT-k3K"/>
                     </connections>
                 </viewController>

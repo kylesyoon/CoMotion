@@ -40,7 +40,7 @@ class ChartWireframe {
         self.chartViewController = chartViewController
         
         let navigationController = UINavigationController(rootViewController: chartViewController)
-        navigationController.tabBarItem = UITabBarItem(title: String.com_list,
+        navigationController.tabBarItem = UITabBarItem(title: String.com_chart,
                                                        image: nil,
                                                        selectedImage: nil)
         
