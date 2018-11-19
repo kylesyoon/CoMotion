@@ -10,8 +10,8 @@ import Foundation
 
 protocol ListModuleInterface: class {
     
-    func startMotionUpdates()
-    func stopMotionUpdates()
+    func startRecordingMotion()
+    func stopRecordingMotion()
     func presentChart()
     
 }

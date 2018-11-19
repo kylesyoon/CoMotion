@@ -15,45 +15,51 @@ class ListPresenter: ListInteractorOutput, ListModuleInterface {
     
     // MARK: ListInteractorOutput
     
-    func update(_ motion: Motion) {
-        let attitudeItemData = ListItemData(title: .com_attitude,
-                                            x: motion.attitude.roll.com_string,
-                                            y: motion.attitude.pitch.com_string,
-                                            z: motion.attitude.yaw.com_string)
+    func finishedRecording(_ motionData: [Motion]) {
+        var listSectionData = [ListSectionData]()
         
-        let rotationItemData = ListItemData(title: .com_rotationRate,
-                                            x: motion.rotationRate.x.com_string,
-                                            y: motion.rotationRate.y.com_string,
-                                            z: motion.rotationRate.z.com_string)
+        for motion in motionData {
+            let attitudeItemData = ListItemData(title: .com_attitude,
+                                                x: motion.attitude.roll.com_string,
+                                                y: motion.attitude.pitch.com_string,
+                                                z: motion.attitude.yaw.com_string)
+            
+            let rotationItemData = ListItemData(title: .com_rotationRate,
+                                                x: motion.rotationRate.x.com_string,
+                                                y: motion.rotationRate.y.com_string,
+                                                z: motion.rotationRate.z.com_string)
+            
+            let gravityItemData = ListItemData(title: .com_gravity,
+                                               x: motion.gravity.x.com_string,
+                                               y: motion.gravity.y.com_string,
+                                               z: motion.gravity.z.com_string)
+            
+            let accelerationItemData = ListItemData(title: .com_userAcceleration,
+                                                    x: motion.userAcceleration.x.com_string,
+                                                    y: motion.userAcceleration.y.com_string,
+                                                    z: motion.userAcceleration.z.com_string)
+            
+            // TODO: motion.heading
+            
+            let sectionData = ListSectionData(timestamp: "\(motion.timestamp)", items: [attitudeItemData,
+                                                                                        rotationItemData,
+                                                                                        gravityItemData,
+                                                                                        accelerationItemData])
+            
+            listSectionData.append(sectionData)
+        }
         
-        let gravityItemData = ListItemData(title: .com_gravity,
-                                           x: motion.gravity.x.com_string,
-                                           y: motion.gravity.y.com_string,
-                                           z: motion.gravity.z.com_string)
-        
-        let accelerationItemData = ListItemData(title: .com_userAcceleration,
-                                                x: motion.userAcceleration.x.com_string,
-                                                y: motion.userAcceleration.y.com_string,
-                                                z: motion.userAcceleration.z.com_string)
-        
-        // TODO: motion.heading
-        
-        let sectionData = ListSectionData(timestamp: "\(motion.timestamp)", items: [attitudeItemData,
-                                                                                    rotationItemData,
-                                                                                    gravityItemData,
-                                                                                    accelerationItemData])
-        
-        self.userInterface?.addSectionDataToUserInterface(data: sectionData)
+        userInterface?.presentSectionDataToUserInterface(data: listSectionData)
     }
-    
+
     // MARK: ListModuleInterface
     
-    func startMotionUpdates() {
-        interactor?.startMotionUpdates()
+    func startRecordingMotion() {
+        interactor?.startRecordingMotion()
     }
     
-    func stopMotionUpdates() {
-        interactor?.stopMotionUpdates()
+    func stopRecordingMotion() {
+        interactor?.stopRecordingMotion()
     }
     
     func presentChart() {

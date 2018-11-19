@@ -9,15 +9,25 @@
 import Foundation
 import CoreMotion
 
+// TODO: Create persistence store
+
 protocol MotionManagerDelegate: class {
     
-    func motionManager(_ motionManager: MotionManager, didUpdate deviceMotion: Motion)
+    /// Lets the delegate know that the MotionManager has finished recording and provides the recorded device motion.
+    ///
+    /// - Parameters:
+    ///   - motionManager: the instance recording the motion data
+    ///   - deviceMotion: the recorded motion data
+    func motionManager(_ motionManager: MotionManager, didFinishRecording deviceMotion: [Motion])
     
 }
 
 class MotionManager {
     
     weak var delegate: MotionManagerDelegate?
+    
+    /// The current motion data
+    var recordedMotion = [Motion]()
     
     let motionManager = CMMotionManager()
     let queue: OperationQueue = {
@@ -29,6 +39,8 @@ class MotionManager {
     }()
     
     private var mockTimer: Timer?
+    
+    
     
     func start() {
         #if targetEnvironment(simulator)
@@ -42,7 +54,7 @@ class MotionManager {
         motionManager.startDeviceMotionUpdates(to: queue) { [weak self] (deviceMotion, error) in
             guard let strongSelf = self, let deviceMotion = deviceMotion else { return }
             print(deviceMotion)
-            strongSelf.delegate?.motionManager(strongSelf, didUpdate: deviceMotion.com_motionValue)
+            strongSelf.recordedMotion.append(deviceMotion.com_motionValue)
         }
         #endif
     }
@@ -53,6 +65,7 @@ class MotionManager {
         #else
         guard motionManager.isDeviceMotionAvailable else { return }
         motionManager.stopDeviceMotionUpdates()
+        delegate?.motionManager(self, didFinishRecording: recordedMotion)
         #endif
     }
     
@@ -84,7 +97,8 @@ class MotionManager {
                                                                 userAcceleration: userAcc,
                                                                 heading: sinSignal,
                                                                 timestamp: timeInterval)
-                                            self.delegate?.motionManager(self, didUpdate: motion)
+                                            
+                                            self.recordedMotion.append(motion)
         }
         mockTimer?.fire()
     }
@@ -92,6 +106,7 @@ class MotionManager {
     private func stopMock() {
         mockTimer?.invalidate()
         mockTimer = nil
+        delegate?.motionManager(self, didFinishRecording: recordedMotion)
     }
     
 }

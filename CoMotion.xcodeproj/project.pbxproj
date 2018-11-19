@@ -213,7 +213,6 @@
 		5A13D80620FD794700CCEBD5 /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
-				5A13D80E20FE32AB00CCEBD5 /* Manager */,
 				5A13D80720FD794E00CCEBD5 /* Interactor */,
 			);
 			path = "Application Logic";
@@ -231,6 +230,7 @@
 		5A13D80A20FD7A3200CCEBD5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C8BCF85721A33BC50037A13F /* Application Logic */,
 				5A13D81020FE32E900CCEBD5 /* Extensions */,
 				5A13D80B20FD7A3900CCEBD5 /* Entity */,
 				5A87FE0120FF9E960011B20F /* View */,
@@ -244,15 +244,6 @@
 				5A13D80C20FD7A4D00CCEBD5 /* Motion.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		5A13D80E20FE32AB00CCEBD5 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				5A03518320EBD54A001343E9 /* ConnectivityManager.swift */,
-				5AA8196B20EB04F4008829CF /* MotionManager.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		5A13D81020FE32E900CCEBD5 /* Extensions */ = {
@@ -472,6 +463,23 @@
 				5AA8195A20EB0329008829CF /* PushNotificationPayload.apns */,
 			);
 			path = "CoMotion WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		C8BCF85721A33BC50037A13F /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				C8BCF85821A33BD60037A13F /* Manager */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		C8BCF85821A33BD60037A13F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5A03518320EBD54A001343E9 /* ConnectivityManager.swift */,
+				5AA8196B20EB04F4008829CF /* MotionManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

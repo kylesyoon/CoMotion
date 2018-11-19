@@ -20,18 +20,18 @@ class ListInteractor: ListInteractorInput, MotionManagerDelegate {
     
     // MARK: ListInteractorInput
     
-    func startMotionUpdates() {
+    func startRecordingMotion() {
         self.motionManager.start()
     }
     
-    func stopMotionUpdates() {
+    func stopRecordingMotion() {
         self.motionManager.stop()
     }
     
     // MARK: MotionManagerDelegate
     
-    func motionManager(_ motionManager: MotionManager, didUpdate deviceMotion: Motion) {
-        self.output?.update(deviceMotion)
+    func motionManager(_ motionManager: MotionManager, didFinishRecording deviceMotion: [Motion]) {
+        output?.finishedRecording(deviceMotion)
     }
     
 }

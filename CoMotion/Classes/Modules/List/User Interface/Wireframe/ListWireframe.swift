@@ -22,7 +22,7 @@ class ListWireframe {
     var listViewController: ListViewController?
     
     var listViewControllerFromStoryboard: ListViewController? {
-        guard let listViewController = self.mainStoryboard.instantiateViewController(withIdentifier: String(describing: ListViewController.self)) as? ListViewController else {
+        guard let listViewController = mainStoryboard.instantiateViewController(withIdentifier: String(describing: ListViewController.self)) as? ListViewController else {
             assertionFailure("Couldn't get ListViewController from Main storyboard.")
             return nil
         }
@@ -39,8 +39,8 @@ class ListWireframe {
                 return
         }
         
-        listViewController.eventHandler = self.listPresenter
-        self.listPresenter?.userInterface = listViewController
+        listViewController.eventHandler = listPresenter
+        listPresenter?.userInterface = listViewController
         self.listViewController = listViewController
         
         var tabs = [UINavigationController]()

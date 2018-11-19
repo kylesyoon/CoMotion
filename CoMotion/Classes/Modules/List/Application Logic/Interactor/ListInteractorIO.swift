@@ -10,13 +10,13 @@ import Foundation
 
 protocol ListInteractorInput: class {
     
-    func startMotionUpdates()
-    func stopMotionUpdates()
+    func startRecordingMotion()
+    func stopRecordingMotion()
     
 }
 
 protocol ListInteractorOutput: class {
     
-    func update(_ motion: Motion)
+    func finishedRecording(_ motionData: [Motion])
     
 }

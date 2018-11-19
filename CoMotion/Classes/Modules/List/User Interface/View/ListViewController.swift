@@ -22,10 +22,10 @@ class ListViewController: UIViewController, ListViewInterface {
             if self.isUpdating {
                 self.navigationItem.rightBarButtonItem?.title = String.com_stop
                 self.activityIndicator.startAnimating()
-                self.eventHandler?.startMotionUpdates()
+                self.eventHandler?.startRecordingMotion()
             } else {
                 self.navigationItem.rightBarButtonItem?.title = String.com_start
-                self.eventHandler?.stopMotionUpdates()
+                self.eventHandler?.stopRecordingMotion()
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             }
@@ -35,25 +35,26 @@ class ListViewController: UIViewController, ListViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = String.com_list
+        title = String.com_list
         let startStopButton = UIBarButtonItem(title: String.com_start,
                                               style: .plain,
                                               target: self,
                                               action: #selector(didTapStartStopButton(_:)))
-        self.navigationItem.rightBarButtonItem = startStopButton
+        navigationItem.rightBarButtonItem = startStopButton
         
-        self.tableView.register(UINib(nibName: String(describing: ListCoordinatesTableViewCell.self), bundle: nil),
+        tableView.register(UINib(nibName: String(describing: ListCoordinatesTableViewCell.self), bundle: nil),
                                 forCellReuseIdentifier: String(describing: ListCoordinatesTableViewCell.self))
     }
     
     @objc func didTapStartStopButton(_ button: UIBarButtonItem) {
-        self.isUpdating = !self.isUpdating
+        isUpdating.toggle()
     }
     
     // MARK: ListViewInterface
     
-    func addSectionDataToUserInterface(data: ListSectionData) {
-        self.sectionData.append(data)
+    func presentSectionDataToUserInterface(data: [ListSectionData]) {
+        sectionData = data
+        tableView.reloadData()
     }
     
 }
@@ -61,15 +62,15 @@ class ListViewController: UIViewController, ListViewInterface {
 extension ListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.sectionData.count
+        return sectionData.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sectionData[section].timestamp
+        return sectionData[section].timestamp
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.sectionData[section].items.count
+        return sectionData[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,7 +79,7 @@ extension ListViewController: UITableViewDataSource {
                                                                     return UITableViewCell()
         }
         
-        let itemData = self.sectionData[indexPath.section].items[indexPath.row]
+        let itemData = sectionData[indexPath.section].items[indexPath.row]
         
         coordinatesCell.titleLabel.text = itemData.title
         coordinatesCell.xLabel.text = itemData.x
