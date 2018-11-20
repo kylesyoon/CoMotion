@@ -24,29 +24,91 @@ class ChartPresenter: ChartInteractorOutput, ChartModuleInterface {
         interactor?.stopRecordingMotion()
     }
     
+    func attribute(motion: Motion, key: String) -> Double {
+        switch key {
+        case "Attitude Roll":
+            return motion.attitude.roll
+        case "Attitude Pitch":
+            return motion.attitude.pitch
+        case "Attitude Yaw":
+            return motion.attitude.yaw
+        case "Rotation Rate X":
+            return motion.rotationRate.x
+        case "Rotation Rate Y":
+            return motion.rotationRate.y
+        case "Rotation Rate Z":
+            return motion.rotationRate.z
+        case "Gravity X":
+            return motion.gravity.x
+        case "Gravity Y":
+            return motion.gravity.y
+        case "Gravity Z":
+            return motion.gravity.z
+        case "User Acc. X":
+            return motion.userAcceleration.z
+        case "User Acc. Y":
+            return motion.userAcceleration.y
+        case "User Acc. Z":
+            return motion.userAcceleration.z
+        case "Heading":
+            return motion.heading
+        default:
+            return 0.0
+        }
+    }
+    
+    let motionPropertyKeys = ["Attitude Roll", "Attitude Pitch", "Attitude Yaw",
+                              "Rotation Rate X", "Rotation Rate Y", "Rotation Rate Z",
+                              "Gravity X", "Gravity Y", "Gravity Z",
+                              "User Acc. X", "User Acc. Y", "User Acc. Z",
+                              "Heading"]
+
     func fetchLineChartData() -> LineChartData? {
         // get data from interactor
         guard
             let recordedMotion = interactor?.fetchRecordedMotion(),
             recordedMotion.count > 0 else {
+                // no recorded data
                 return nil
         }
-        // convert to line chart data
-        let values = recordedMotion.map { motion -> ChartDataEntry in
-            return ChartDataEntry(x: motion.timestamp, y: motion.userAcceleration.x)
-        }
         
-        let userAccXSet = LineChartDataSet(values: values, label: String.com_userAcceleration + " X")
-        
-        let lineChartData = LineChartData(dataSet: userAccXSet)
-        
-        return lineChartData
+        return convertRecordedMotionToChartData(recordedMotion)
     }
     
     // MARK: ChartInteractorOutput
     
     func finishedRecording(_ motionData: [Motion]) {
         // update interface
+    }
+    
+    // MARK: Private
+    
+    private func convertRecordedMotionToChartData(_ recordedMotion: [Motion]) -> LineChartData {
+        var dataKeyEntries = [Motion.PropertyKeys: [ChartDataEntry]]()
+        
+        for motion in recordedMotion {
+            Motion.PropertyKeys.allCases.forEach { propertyCase in
+                let property = motion.property(key: propertyCase)
+                let chartEntry = ChartDataEntry(x: motion.timestamp, y: property)
+                if var entries = dataKeyEntries[propertyCase] {
+                    entries.append(chartEntry)
+                    dataKeyEntries[propertyCase] = entries
+                } else {
+                    dataKeyEntries[propertyCase] = [chartEntry]
+                }
+            }
+        }
+        
+        var dataSets = [LineChartDataSet]()
+        
+        Motion.PropertyKeys.allCases.forEach { propertyCase in
+            let set = LineChartDataSet(values: dataKeyEntries[propertyCase], label: propertyCase.rawValue)
+            set.drawCircleHoleEnabled = false
+            set.circleRadius = 2.0
+            dataSets.append(set)
+        }
+        
+        return LineChartData(dataSets: dataSets)
     }
     
 }

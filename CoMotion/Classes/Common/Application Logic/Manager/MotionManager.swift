@@ -79,7 +79,7 @@ class MotionManager {
                                          repeats: true) { timer in
                                             let timeInterval = Double(index) * Double(timer.timeInterval)
                                             index += 1
-                                            let sinSignal = sin(timeInterval)
+                                            let sinSignal = sin(timeInterval * 10)
                                             let attitude = Attitude(roll: sinSignal,
                                                                     pitch: sinSignal,
                                                                     yaw: sinSignal)

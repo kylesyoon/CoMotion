@@ -24,4 +24,12 @@ class ChartViewController: UIViewController, ChartViewInterface {
         lineChartView.data = chartData
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        chartData = eventHandler?.fetchLineChartData()
+        lineChartView.data = chartData
+    }
+    
+    
 }

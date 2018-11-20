@@ -18,7 +18,53 @@ struct Motion: Codable {
     let userAcceleration: Coordinates3D
     let heading: Double
     let timestamp: Double
+    
+    enum PropertyKeys: String, CaseIterable {
+        case attitudeRoll = "Attitude Roll"
+        case attitudePitch = "Attitude Pitch"
+        case attitudeYaw = "Attitude Yaw"
+        case rotationRateX = "Rotation Rate X"
+        case rotationRateY = "Rotation Rate Y"
+        case rotationRateZ = "Rotation Rate Z"
+        case gravityX = "Gravity X"
+        case gravityY = "Gravity Y"
+        case gravityZ = "Gravity Z"
+        case userAccX = "User Acc. X"
+        case userAccY = "User Acc. Y"
+        case userAccZ = "User Acc. Z"
+        case heading = "Heading"
+    }
 
+    func property(key: PropertyKeys) -> Double {
+        switch key {
+        case .attitudeRoll:
+            return self.attitude.roll
+        case .attitudePitch:
+            return self.attitude.pitch
+        case .attitudeYaw:
+            return self.attitude.yaw
+        case .rotationRateX:
+            return self.rotationRate.x
+        case .rotationRateY:
+            return self.rotationRate.y
+        case .rotationRateZ:
+            return self.rotationRate.z
+        case .gravityX:
+            return self.gravity.x
+        case .gravityY:
+            return self.gravity.y
+        case .gravityZ:
+            return self.gravity.z
+        case .userAccX:
+            return self.userAcceleration.z
+        case .userAccY:
+            return self.userAcceleration.y
+        case .userAccZ:
+            return self.userAcceleration.z
+        case .heading:
+            return self.heading
+        }
+    }
 }
 
 extension Motion: Equatable {
@@ -69,3 +115,5 @@ extension Coordinates3D: Equatable {
     }
     
 }
+
+
