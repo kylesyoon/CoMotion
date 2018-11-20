@@ -23,45 +23,6 @@ class ChartPresenter: ChartInteractorOutput, ChartModuleInterface {
     func stopRecordingMotion() {
         interactor?.stopRecordingMotion()
     }
-    
-    func attribute(motion: Motion, key: String) -> Double {
-        switch key {
-        case "Attitude Roll":
-            return motion.attitude.roll
-        case "Attitude Pitch":
-            return motion.attitude.pitch
-        case "Attitude Yaw":
-            return motion.attitude.yaw
-        case "Rotation Rate X":
-            return motion.rotationRate.x
-        case "Rotation Rate Y":
-            return motion.rotationRate.y
-        case "Rotation Rate Z":
-            return motion.rotationRate.z
-        case "Gravity X":
-            return motion.gravity.x
-        case "Gravity Y":
-            return motion.gravity.y
-        case "Gravity Z":
-            return motion.gravity.z
-        case "User Acc. X":
-            return motion.userAcceleration.z
-        case "User Acc. Y":
-            return motion.userAcceleration.y
-        case "User Acc. Z":
-            return motion.userAcceleration.z
-        case "Heading":
-            return motion.heading
-        default:
-            return 0.0
-        }
-    }
-    
-    let motionPropertyKeys = ["Attitude Roll", "Attitude Pitch", "Attitude Yaw",
-                              "Rotation Rate X", "Rotation Rate Y", "Rotation Rate Z",
-                              "Gravity X", "Gravity Y", "Gravity Z",
-                              "User Acc. X", "User Acc. Y", "User Acc. Z",
-                              "Heading"]
 
     func fetchLineChartData() -> LineChartData? {
         // get data from interactor
