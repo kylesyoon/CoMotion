@@ -101,10 +101,16 @@ class ChartPresenter: ChartInteractorOutput, ChartModuleInterface {
         
         var dataSets = [LineChartDataSet]()
         
-        Motion.PropertyKeys.allCases.forEach { propertyCase in
+        Motion.PropertyKeys.allCases.enumerated().forEach { index, propertyCase in
             let set = LineChartDataSet(values: dataKeyEntries[propertyCase], label: propertyCase.rawValue)
             set.drawCircleHoleEnabled = false
             set.circleRadius = 2.0
+            let indexBasedColor = UIColor(red: CGFloat(Double(index + 1) / Double(Motion.PropertyKeys.allCases.count)),
+                                          green: 0.0,
+                                          blue: CGFloat(Double(Motion.PropertyKeys.allCases.count - index + 1) / Double(Motion.PropertyKeys.allCases.count)),
+                                          alpha: 1.0)
+            set.setColor(indexBasedColor)
+            set.setCircleColor(indexBasedColor)
             dataSets.append(set)
         }
         

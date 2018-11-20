@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yoon, Kyle. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // TODO: Does magnetic field matter?
 
