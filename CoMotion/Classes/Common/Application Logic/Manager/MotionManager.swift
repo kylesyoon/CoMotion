@@ -79,24 +79,34 @@ class MotionManager {
                                          repeats: true) { timer in
                                             let timeInterval = Double(index) * Double(timer.timeInterval)
                                             index += 1
-                                            let sinSignal = sin(timeInterval * 10)
-                                            let attitude = Attitude(roll: sinSignal,
-                                                                    pitch: sinSignal,
-                                                                    yaw: sinSignal)
-                                            let rotRate = Coordinates3D(x: sinSignal,
-                                                                        y: sinSignal,
-                                                                        z: sinSignal)
-                                            let gravity = Coordinates3D(x: sinSignal,
-                                                                        y: sinSignal,
-                                                                        z: sinSignal)
-                                            let userAcc = Coordinates3D(x: sinSignal,
-                                                                        y: sinSignal,
-                                                                        z: sinSignal)
+                                            
+                                            // skew mock data so they aren't overlapping
+                                            let attitudeSin = sin(timeInterval * 10)
+                                            let attitude = Attitude(roll: attitudeSin,
+                                                                    pitch: attitudeSin + 0.1,
+                                                                    yaw: attitudeSin + 0.2)
+                                            
+                                            let rotRateSin = sin(timeInterval * 10 + 0.1)
+                                            let rotRate = Coordinates3D(x: rotRateSin,
+                                                                        y: rotRateSin + 0.1,
+                                                                        z: rotRateSin + 0.2)
+                                            
+                                            let gravitySin = sin(timeInterval * 10 + 0.2)
+                                            let gravity = Coordinates3D(x: gravitySin,
+                                                                        y: gravitySin + 0.1,
+                                                                        z: gravitySin + 0.2)
+                                            
+                                            let userAccSin = sin(timeInterval * 10 + 0.3)
+                                            let userAcc = Coordinates3D(x: userAccSin,
+                                                                        y: userAccSin + 0.1,
+                                                                        z: userAccSin + 0.2)
+                                            
+                                            let headingSin = sin(timeInterval * 10 + 0.4)
                                             let motion = Motion(attitude: attitude,
                                                                 rotationRate: rotRate,
                                                                 gravity: gravity,
                                                                 userAcceleration: userAcc,
-                                                                heading: sinSignal,
+                                                                heading: headingSin,
                                                                 timestamp: timeInterval)
                                             
                                             self.recordedMotion.append(motion)
