@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-Je-Ps3">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-Je-Ps3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="mKK-2B-TMl">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -34,21 +34,29 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kCa-oh-sBB">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pF0-eZ-BGT">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Po7-Je-Ps3" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="3ct-Tf-1N5"/>
                             <constraint firstItem="kCa-oh-sBB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FFZ-b0-PNH"/>
+                            <constraint firstItem="pF0-eZ-BGT" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="Ik2-Qh-3CL"/>
+                            <constraint firstItem="pF0-eZ-BGT" firstAttribute="trailing" secondItem="Uee-0j-aNJ" secondAttribute="trailing" id="UX4-Fq-CZB"/>
                             <constraint firstItem="Po7-Je-Ps3" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" id="cbm-st-5WP"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="Po7-Je-Ps3" secondAttribute="trailing" id="e77-tp-Ti7"/>
-                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="Po7-Je-Ps3" secondAttribute="bottom" id="jxe-tX-OkM"/>
                             <constraint firstItem="kCa-oh-sBB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ldi-Eh-Wk5"/>
+                            <constraint firstItem="pF0-eZ-BGT" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" id="xTc-EW-Nw5"/>
+                            <constraint firstItem="pF0-eZ-BGT" firstAttribute="top" secondItem="Po7-Je-Ps3" secondAttribute="bottom" id="xy8-0n-VNg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="kCa-oh-sBB" id="vs6-yH-rRu"/>
                         <outlet property="tableView" destination="Po7-Je-Ps3" id="Sm9-FT-k3K"/>
+                        <outlet property="toolBar" destination="pF0-eZ-BGT" id="gYz-j3-rTd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

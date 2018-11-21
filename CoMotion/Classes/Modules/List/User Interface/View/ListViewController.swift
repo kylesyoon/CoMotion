@@ -14,17 +14,17 @@ class ListViewController: UIViewController, ListViewInterface {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet var toolBar: UIToolbar!
     
     fileprivate var sectionData = [ListSectionData]()
     fileprivate var isUpdating: Bool = false {
         didSet {
             if self.isUpdating {
-                self.navigationItem.rightBarButtonItem?.title = String.com_stop
+                self.toolBar.items?.first?.title = String.com_stop
                 self.activityIndicator.startAnimating()
                 self.eventHandler?.startRecordingMotion()
             } else {
-                self.navigationItem.rightBarButtonItem?.title = String.com_start
+                self.toolBar.items?.first?.title = String.com_start
                 self.eventHandler?.stopRecordingMotion()
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
@@ -36,14 +36,15 @@ class ListViewController: UIViewController, ListViewInterface {
         super.viewDidLoad()
         
         title = String.com_list
+
+        tableView.register(UINib(nibName: String(describing: ListCoordinatesTableViewCell.self), bundle: nil),
+                                forCellReuseIdentifier: String(describing: ListCoordinatesTableViewCell.self))
+        
         let startStopButton = UIBarButtonItem(title: String.com_start,
                                               style: .plain,
                                               target: self,
                                               action: #selector(didTapStartStopButton(_:)))
-        navigationItem.rightBarButtonItem = startStopButton
-        
-        tableView.register(UINib(nibName: String(describing: ListCoordinatesTableViewCell.self), bundle: nil),
-                                forCellReuseIdentifier: String(describing: ListCoordinatesTableViewCell.self))
+        toolBar.setItems([startStopButton], animated: true)
     }
     
     @objc func didTapStartStopButton(_ button: UIBarButtonItem) {

@@ -20,8 +20,7 @@ class ChartViewController: UIViewController, ChartViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chartData = eventHandler?.fetchLineChartData()
-        lineChartView.data = chartData
+        title = String.com_chart
     }
     
     override func viewWillAppear(_ animated: Bool) {
