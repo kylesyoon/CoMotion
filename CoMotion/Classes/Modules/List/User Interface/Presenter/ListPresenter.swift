@@ -62,4 +62,9 @@ class ListPresenter: ListInteractorOutput, ListModuleInterface {
         interactor?.stopRecordingMotion()
     }
     
+    func deleteMotion(at indicies: [Int]) {
+        interactor?.deleteMotion(at: indicies)
+        interactor?.fetchRecordedMotion()
+    }
+    
 }

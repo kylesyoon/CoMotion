@@ -20,17 +20,23 @@ class ListViewController: UIViewController, ListViewInterface {
     fileprivate var isUpdating: Bool = false {
         didSet {
             if self.isUpdating {
-                self.toolBar.items?.first?.title = String.com_stop
-                self.activityIndicator.startAnimating()
-                self.eventHandler?.startRecordingMotion()
+                startStopButton?.title = String.com_stop
+                activityIndicator.startAnimating()
+                eventHandler?.startRecordingMotion()
             } else {
-                self.toolBar.items?.first?.title = String.com_start
-                self.eventHandler?.stopRecordingMotion()
-                self.activityIndicator.stopAnimating()
-                self.tableView.reloadData()
+                eventHandler?.stopRecordingMotion()
+                activityIndicator.stopAnimating()
+                startStopButton?.title = String.com_start
+                if let selectedCount = tableView.indexPathsForSelectedRows?.count, selectedCount > 0 {
+                    deleteButton?.isEnabled = true
+                }
+                tableView.reloadData()
             }
         }
     }
+    fileprivate var startStopButton: UIBarButtonItem?
+    fileprivate var deleteButton: UIBarButtonItem?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +50,33 @@ class ListViewController: UIViewController, ListViewInterface {
                                               style: .plain,
                                               target: self,
                                               action: #selector(didTapStartStopButton(_:)))
-        toolBar.setItems([startStopButton], animated: true)
+        self.startStopButton = startStopButton
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                        target: nil,
+                                        action: nil)
+        
+        let deleteButton = UIBarButtonItem(title: String.com_delete,
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(didTapDeleteButton(_:)))
+        deleteButton.isEnabled = false // disable when none are selected
+        self.deleteButton = deleteButton
+        
+        toolBar.setItems([startStopButton, flexSpace, deleteButton], animated: true)
     }
+    
+    // MARK: Private
     
     @objc func didTapStartStopButton(_ button: UIBarButtonItem) {
         isUpdating.toggle()
+    }
+    
+    @objc func didTapDeleteButton(_ button: UIBarButtonItem) {
+        guard let selectedIndexPaths = tableView.indexPathsForSelectedRows else { return }
+        // dont remove redundant sections because it will delete the next one in line
+        let selectedSections = Array(Set(selectedIndexPaths.map { $0.section }))
+        eventHandler?.deleteMotion(at: selectedSections)
     }
     
     // MARK: ListViewInterface
@@ -88,6 +116,43 @@ extension ListViewController: UITableViewDataSource {
         coordinatesCell.zLabel.text = itemData.z
         
         return coordinatesCell
+    }
+    
+}
+
+extension ListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // user can only delete entire data points (rather than one property of motion)
+        // so select entire section
+        for row in 0..<sectionData[indexPath.section].items.count {
+            tableView.selectRow(at: IndexPath(row: row, section: indexPath.section),
+                                animated: false,
+                                scrollPosition: .none)
+        }
+        
+        guard
+            let deleteButton = deleteButton else {
+            assertionFailure("Couldn't find a delete button!")
+            return
+        }
+        
+        if !deleteButton.isEnabled {
+            deleteButton.isEnabled = true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        // user can only delete entire data points (rather than one property of motion)
+        // so deselect entire section
+        for row in 0..<sectionData[indexPath.section].items.count {
+            tableView.deselectRow(at: IndexPath(row: row, section: indexPath.section),
+                                  animated: false)
+        }
+        
+        if tableView.indexPathsForSelectedRows?.count == 0 {
+            deleteButton?.isEnabled = false
+        }
     }
     
 }

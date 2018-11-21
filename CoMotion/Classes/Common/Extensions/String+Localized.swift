@@ -28,6 +28,10 @@ extension String {
         return NSLocalizedString("Stop", comment: "Stop")
     }()
     
+    static var com_delete = {
+        return NSLocalizedString("Delete", comment: "Delete")
+    }()
+    
     static var com_attitude = {
         return NSLocalizedString("Attitude", comment: "Attitude")
     }()

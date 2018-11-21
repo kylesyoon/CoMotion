@@ -12,5 +12,6 @@ protocol ListModuleInterface: class {
     
     func startRecordingMotion()
     func stopRecordingMotion()
+    func deleteMotion(at indicies: [Int])
     
 }

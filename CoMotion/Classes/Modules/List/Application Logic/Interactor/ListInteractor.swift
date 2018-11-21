@@ -28,6 +28,14 @@ class ListInteractor: ListInteractorInput, MotionManagerDelegate {
         self.motionManager.stop()
     }
     
+    func deleteMotion(at indicies: [Int]) {
+        self.motionManager.delete(at: indicies)
+    }
+    
+    func fetchRecordedMotion() {
+        motionManager(motionManager, didFinishRecording: motionManager.recordedMotion)
+    }
+    
     // MARK: MotionManagerDelegate
     
     func motionManager(_ motionManager: MotionManager, didFinishRecording deviceMotion: [Motion]) {

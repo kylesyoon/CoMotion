@@ -69,6 +69,10 @@ class MotionManager {
         #endif
     }
     
+    func delete(at indicies: [Int]) {
+        indicies.forEach { recordedMotion.remove(at: $0) }
+    }
+    
     deinit {
         stop()
     }
